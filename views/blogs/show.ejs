@@ -1,0 +1,137 @@
+<% include ../partials/header.ejs%>
+
+    <div class="container main">
+        <div class="row">
+            <!-- Latest Posts -->
+            <main class="post blog-post col-lg-8">
+                <div class="container">
+                    <div class="post-single">
+                        <div class="post-thumbnail">
+                            <img src="<%=blog.image%>" alt="..." class=".img-thumbnail">
+                        </div>
+                        <div class="post-details">
+                            <div class="post-meta d-flex justify-content-between">
+
+                            </div>
+                            <h1>
+                                <%=blog.title%>
+                                    <a href="#">
+                                        <i class="fa fa-bookmark-o"></i>
+                                    </a>
+                            </h1>
+                            <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
+                                <a href="#" class="author d-flex align-items-center flex-wrap">
+                                    <div class="avatar">
+                                        <img src="<%=blog.author.email%>" alt="..." class="img-fluid">
+                                    </div>
+                                    <div class="title">
+                                        <span>
+                                            <a href="/users/<%=blog.author.id%>">
+                                                <%=blog.author.username%>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div class="date">
+                                        <i class="icon-clock"></i>
+                                        <%= moment(blog.createdAt).fromNow() %>
+                                    </div>
+                                    <div class="views">
+                                        <% if(currentUser && blog.author.id.equals(currentUser._id ) || currentUser && currentUser.isAdmin) {%>
+
+                                            <a class="btn btn-outline-warning" href="/blogs/<%= blog._id %>/edit">Edit</a>
+                                    </div>
+                                    <div class="comments meta-last">
+
+                                        <form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                                            <button class="btn btn-outline-danger">Delete</button>
+                                        </form>
+                                        <%}%>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-body">
+                                <p class="lead">
+                                    <%=blog.body%>
+                                </p>
+
+
+
+
+                            </div>
+                            <div class="post-comments">
+                                <header>
+                                    <h3 class="h6">Comments
+                                        <span class="no-of-comments">
+                                            (
+                                            <%= blog.comments.length %>)
+                                        </span>
+                                    </h3>
+                                </header>
+                                <div class="comment">
+                                    <% blog.comments.forEach(function(comment){%>
+                                        <div class="comment-header d-flex justify-content-between">
+                                            <div class="user d-flex align-items-center">
+                                                <div class="image">
+                                                    <img src="<%=comment.author.avatar%>" alt="..." class="img-fluid rounded-circle">
+                                                </div>
+                                                <div class="title">
+                                                    <strong>
+                                                        <%=comment.author.username %>
+                                                    </strong>
+                                                    <span class="date">
+                                                        date
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-body">
+                                            <p>
+                                                <%=comment.text %>
+                                            </p>
+                                            <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+
+                                                <a class="btn btn-xs btn-warning" href="/blogs/<%=blog._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                                                <form id="delete-form" action="/blogs/<%=blog._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                                </form>
+                                                <% } %>
+                                        </div>
+
+                                </div>
+                                <% }) %>
+
+                                    <div class="add-comment">
+                                        <header>
+                                            <h3 class="h6">Post Comment</h3>
+                                        </header>
+
+                                        <form action="/blogs/<%= blog._id %>/comments" method="POST">
+                                            <div class="form-group">
+                                                <input class="form-control" type="text" name="comment[text]" placeholder="add your comment here..">
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-success">Submit!</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+            </main>
+            <aside class="col-lg-4">
+                <!-- Widget [Search Bar Widget]-->
+                <div class="widget search">
+                    <header>
+                        <h3 class="h6">Search the blog</h3>
+                    </header>
+                    <form action="#" class="search-form">
+                        <div class="form-group">
+                            <input type="search" placeholder="What are you looking for?">
+                            <button type="submit" class="submit">
+                                <i class="icon-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <% include ../partials/footer.ejs%>

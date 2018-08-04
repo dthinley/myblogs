@@ -1,0 +1,20 @@
+<% include ../partials/header.ejs%>
+    <h1>Welcome back:&nbsp
+        <div class="row">
+            <h1>
+                <%=user.firstName%>
+            </h1>
+            <img src="<%=user.avatar%>" alt="">
+            <% blogs.forEach(function(blog){%>
+
+                <td>
+                    <%= blog.title%>
+                </td>
+                <td>
+                    <a href="/blogs/<%= blog._id %>">Full Address</td>
+                </tr>
+
+                </tbody>
+                <% }); %>
+        </div>
+        <% include ../partials/footer.ejs%>

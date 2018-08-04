@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom icon font-->
+    <link rel="stylesheet" href="css/fontastic.css">
+    <!-- Google fonts - Open Sans-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <!-- Fancybox-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/style.default.css">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="favicon.png">
+
+
+</head>
+
+<body>
+    <!-- Main Navbar-->
+
+    <nav class="navbar fixed-top navbar-expand-lg">
+
+        <div class="container">
+            <!-- Navbar Brand -->
+            <div class="navbar-header d-flex align-items-center justify-content-between">
+                <!-- Navbar Brand -->
+                <a href="index.html" class="navbar-brand">My Blog</a>
+                <!-- Toggle Button-->
+                <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false"
+                    aria-label="Toggle navigation" class="navbar-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <!-- Navbar Menu -->
+            <div id="navbarcollapse" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link active ">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blogs" class="nav-link ">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link ">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/blogs/new" class="nav-link ">Add Post</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <% if (!currentUser) {%>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link ">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/register" class="nav-link ">SignUp</a>
+                        </li>
+                        <% }else{%>
+                            <li>
+                                <a href="#">Signed in as
+                                    <%=currentUser.username%>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-primary" href="/logout">Logout</a>
+                            </li>
+                            <%}%>
+                </ul>
+
+            </div>
+    </nav>
+
+    <div class="container">
+        <% if(error && error.length >0) {%>
+            <div class="alert alert-danger" role="alert">
+                <%=error%>
+            </div>
+            <% } %>
+                <% if(success && success.length >0) {%>
+                    <div class="alert alert-success" role="alert">
+                        <%=success%>
+                    </div>
+                    <% } %>
+    </div>

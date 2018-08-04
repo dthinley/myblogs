@@ -1,0 +1,15 @@
+<% include ./partials/header.ejs%>
+    <h1>Register page</h1>
+
+    <form action="/register" method="POST">
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="text" name="firstName" placeholder="first name">
+        <input type="text" name="lastName" placeholder="last name">
+        <input type="text" name="email" placeholder="email address">
+        <input type="text" name="avatar" placeholder="avatar">
+        <input type="text" name="adminCode" placeholder="admin code">
+        <button>Sing up</button>
+
+    </form>
+    <% include ./partials/footer.ejs%>
