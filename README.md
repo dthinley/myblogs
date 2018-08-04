@@ -8,12 +8,12 @@ Modern web applications perform a variety of functions and provide amazing featu
 
 #### Prerequisites
 Make sure that you have following intstalled:
-# Node.js and NPM installed on your machine, if not, visit the Node.js website to install the latest version.
-# mongodb
+1. Node.js and NPM installed on your machine, if not, visit the Node.js website to install the latest version.
+2. mongodb
 
 #### Getting startd
-# Download or Clone https://github.com/dthinley/myblogs.git repository.
-# setup local server to port 3000
+1. Download or Clone https://github.com/dthinley/myblogs.git repository.
+2. setup local server to port 3000
 
 
 ### Running project
