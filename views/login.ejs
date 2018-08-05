@@ -1,11 +1,56 @@
 <% include ./partials/header.ejs%>
 
-    <h1>Login page</h1>
+    <div class="container main">
+        <div class="row">
 
-    <form action="/login" method="POST">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <button>Sing up</button>
-    </form>
+            <div style="width: 54%; margin: 25px auto;">
+                <div class="container">
+                    <div class="row centered-form">
+                        <div class="col-md-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <p>
+                                        <h3 class="panel-title">Login
+                                            <small></small>
+                                        </h3>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <form action="/login" method="POST">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-md-6 col-md-12">
+                                                <div class="form-group">
+                                                    <input type="text" name="username" class="form-control input-sm" placeholder="User name">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-md-6 col-md-12">
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-control input-sm" placeholder="password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" value="Login" class="btn btn-info btn-lg btn-block">
+                                        </div>
+                                </div>
+                                </form>
+
+                                <br>
+                                <p>Dont have an account yet? Sign up.</p>
+                                <div class="form-group">
+                                    <a href="/register" class="btn btn-dark btn-lg btn-block ">Register</a>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
     <% include ./partials/footer.ejs%>

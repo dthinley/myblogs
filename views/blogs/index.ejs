@@ -24,7 +24,7 @@
                                         </h3>
                                     </a>
                                     <p class="text-muted">
-                                        <%=blog.body %>
+                                        <%- blog.body.substring(0, 100) %>...
                                     </p>
                                     <a href="/blogs/<%=blog._id%>">Read more..</a>
                                     <footer class="post-footer d-flex align-items-center">

@@ -115,28 +115,10 @@ h1:hover a {
   margin-bottom: 20px;
 }
 
-.category a {
-  color: #999;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-.category a::after {
-  content: ",";
-  color: #ddd;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.category a:last-of-type::after {
-  display: none;
-}
-
-.category a:hover {
-  color: #000;
+.avatar {
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 5px;
 }
 
 i[class*="icon-"] {

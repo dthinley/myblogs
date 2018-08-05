@@ -1,15 +1,83 @@
 <% include ./partials/header.ejs%>
-    <h1>Register page</h1>
 
-    <form action="/register" method="POST">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <input type="text" name="firstName" placeholder="first name">
-        <input type="text" name="lastName" placeholder="last name">
-        <input type="text" name="email" placeholder="email address">
-        <input type="text" name="avatar" placeholder="avatar">
-        <input type="text" name="adminCode" placeholder="admin code">
-        <button>Sing up</button>
+    <div class="container main">
+        <div class="row">
 
-    </form>
+            <div style="width: 54%; margin: 25px auto;">
+                <div class="container">
+                    <div class="row centered-form">
+                        <div class="col-md-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <p>
+                                        <h3 class="panel-title">Please sign up
+                                            <small>It's free!</small>
+                                        </h3>
+                                    </p>
+                                </div>
+                                <div class="panel-body">
+                                    <form action="/register" method="post">
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="username" class="form-control input-sm" placeholder="username">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-control input-sm" placeholder="Password">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="firstName" class="form-control input-sm" placeholder="first name">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="lastName" class="form-control input-sm" placeholder="Last name">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="avatar" class="form-control input-sm" placeholder="Avatar:url">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" name="adminCode" class="form-control input-sm" placeholder="Admin Code">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="submit" value="Register" class="btn btn-info btn-lg btn-block">
+                                </div>
+
+                                </form>
+                            </div>
+                            <br>
+                            <p>Already have an account? Sign in.</p>
+                            <div class="form-group">
+                                <a href="/login" class="btn btn-dark btn-lg btn-block ">Login</a>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
     <% include ./partials/footer.ejs%>
