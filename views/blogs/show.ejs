@@ -22,7 +22,7 @@
                             <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
                                     <div class="avatar">
-                                        <img src="<%=blog.author.email%>" alt="..." class="img-fluid">
+                                        <img src="<%=blog.author.id.avatar%>" alt="..." class="img-fluid">
                                     </div>
                                     <div class="title">
                                         <span>
@@ -34,7 +34,7 @@
                                 </a>
                                 <div class="d-flex align-items-center flex-wrap">
                                     <div class="date">
-                                        <i class="fa fa-clock"></i>
+                                        <i class="fa fa-clock-o ion-clock"></i>
                                         <%= moment(blog.createdAt).fromNow() %>
                                     </div>
                                     <div class="views">

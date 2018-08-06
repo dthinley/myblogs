@@ -37,7 +37,7 @@
             <!-- Navbar Brand -->
             <div class="navbar-header d-flex align-items-center justify-content-between">
                 <!-- Navbar Brand -->
-                <a href="index.html" class="navbar-brand">My Blog</a>
+                <a href="/" class="navbar-brand">My Blog</a>
                 <!-- Toggle Button-->
                 <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false"
                     aria-label="Toggle navigation" class="navbar-toggler">
@@ -59,9 +59,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link ">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/blogs/new" class="nav-link ">Add Post</a>
-                    </li>
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <% if (!currentUser) {%>
@@ -73,20 +71,27 @@
                         </li>
                         <% }else{%>
                             <li>
-                                <a href="#">Signed in as
-                                    <br>
+                                <a href="#">Hi,
+
                                     <%=currentUser.username%>
                                 </a>
-                                <img class="avatar" src="<%=currentUser.avatar%>" alt="">
+                                <img class="avatar" src="<%=currentUser.avatar%>" alt="avatar">
                             </li>
-                            <br>
-                            <li>
-                                <a href="/logout ">Logout</a>
-                            </li>
-                            <%}%>
-                </ul>
 
-            </div>
+
+                </ul>
+                <div class="dropdown show">
+                    <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Account
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="/logout ">Logout</a>
+                    </div>
+                </div>
+                <%}%>
     </nav>
 
     <div class="container main ">
