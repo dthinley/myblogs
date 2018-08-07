@@ -25,27 +25,27 @@
                                     </a>
                                     <p class="text-muted">
                                         <%- blog.body.substring(0, 100) %>...
+                                            <a href="/blogs/<%=blog._id%>">Read more</a>
                                     </p>
-                                    <a href="/blogs/<%=blog._id%>">Read more..</a>
+
                                     <footer class="post-footer d-flex align-items-center">
                                         <a href="#" class="author d-flex align-items-center flex-wrap">
-                                            <div class="avatar">
-                                                <img src="img/avatar-3.jpg" alt="..." class="img-fluid">
-                                            </div>
+
                                             <div class="title">
                                                 <span>
-                                                    <%=blog.author.username%>
+                                                    <a href="/users/<%=blog.author.id%>">
+                                                        <%=blog.author.username%>
                                                 </span>
                                             </div>
-                                        </a>
-                                        <div class="date">
-                                            <i class="fa fa-clock-o ion-clock"></i>
-                                            <%=blog.created%>
-                                        </div>
-                                        <div class="comments meta-last">
-                                            <i class="fa fa-comments"></i>
-                                            <%= blog.comments.length %>
-                                        </div>
+                                            </a>
+                                            <div class="date">
+                                                <i class="fa fa-clock-o ion-clock"></i>
+                                                <%= moment(blog.createdAt).fromNow() %>
+                                            </div>
+                                            <div class="comments meta-last">
+                                                <i class="fa fa-comments"></i>
+                                                <%= blog.comments.length %>
+                                            </div>
                                     </footer>
                                 </div>
                             </div>

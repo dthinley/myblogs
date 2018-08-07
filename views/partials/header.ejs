@@ -71,8 +71,7 @@
                         </li>
                         <% }else{%>
                             <li>
-                                <a href="#">Hi,
-
+                                <a href="/users/<%=currentUser.id %>">Hi,
                                     <%=currentUser.username%>
                                 </a>
                                 <img class="avatar" src="<%=currentUser.avatar%>" alt="avatar">
@@ -87,7 +86,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Dashboard</a>
+                        <a class="dropdown-item" href="/users/<%=currentUser.id %>">Dashboard</a>
                         <a class="dropdown-item" href="/logout ">Logout</a>
                     </div>
                 </div>

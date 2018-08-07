@@ -21,9 +21,7 @@
                             </h1>
                             <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
                                 <a href="#" class="author d-flex align-items-center flex-wrap">
-                                    <div class="avatar">
-                                        <img src="<%=blog.author.id.avatar%>" alt="..." class="img-fluid">
-                                    </div>
+
                                     <div class="title">
                                         <span>
                                             <a href="/users/<%=blog.author.id%>">
@@ -73,15 +71,13 @@
                                     <% blog.comments.forEach(function(comment){%>
                                         <div class="comment-header d-flex justify-content-between">
                                             <div class="user d-flex align-items-center">
-                                                <div class="image">
-                                                    <img src="<%=comment.author.avatar%>" alt="..." class="img-fluid rounded-circle">
-                                                </div>
+
                                                 <div class="title">
                                                     <strong>
                                                         <%=comment.author.username %>
                                                     </strong>
                                                     <span class="date">
-                                                        date
+                                                        <%= moment(comment.createdAt).fromNow() %>
                                                     </span>
                                                 </div>
                                             </div>
@@ -92,9 +88,12 @@
                                             </p>
                                             <% if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
 
-                                                <a class="btn btn-xs btn-warning" href="/blogs/<%=blog._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                                                <a href="/blogs/<%=blog._id %>/comments/<%=comment._id %>/edit">
+                                                    <i class="fa fa-edit"></i>edit
+                                                </a>
                                                 <form id="delete-form" action="/blogs/<%=blog._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
-                                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                                    <input type="submit" value="Delete">
+
                                                 </form>
                                                 <% } %>
                                         </div>
