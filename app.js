@@ -53,6 +53,6 @@ app.use("/", indexRoutes);
 app.use("/blogs", blogRoutes);
 app.use("/blogs/:id/comments", commentRoutes);
 
-app.listen(3000, function() {
-  console.log("your app is up and running!");
+app.listen(3000 || process.env.PORT, process.env.IP, function() {
+  console.log("The Server Has Started!");
 });
