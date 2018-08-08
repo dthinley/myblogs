@@ -15,9 +15,10 @@ commentRoutes = require("./routes/comments");
 indexRoutes = require("./routes/index");
 
 mongoose.connect(
-  "mongodb://localhost:27017/blog_app",
+  "mongodb://dorjee:Windhorse231@ds115762.mlab.com:15762/blog_app",
   { useNewUrlParser: true }
 );
+//mongodb://dorjee:Windhorse231@ds115762.mlab.com:15762/blog_app
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
